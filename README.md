@@ -52,8 +52,8 @@ docker compose exec php php yii migrate/down all
 
 ## Endpoints
 
-Создание заявки: http://localhost/api/v1/requests (POST)
-Запуск обработки заявок с delay: http://localhost/api/v1/processor?delay=1 (GET)
+- Создание заявки: http://localhost/api/v1/requests (POST)
+- Запуск обработки заявок с delay: http://localhost/api/v1/processor?delay=1 (GET)
 
 
 ## Автор
