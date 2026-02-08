@@ -24,7 +24,7 @@
 
 ---
 
-## Запуск проекта
+## Запуск проекта (шаг 1)
 
 Собрать образы и запустить контейнеры:
 
@@ -34,9 +34,13 @@ docker compose up --build -d
 
 После успешного запуска приложение будет доступно по адресу, указанному в конфигурации Docker (обычно http://localhost).
 
+## Установка зависимостей composer (шаг 2)
+```bash
+docker compose exec php composer update
+```
 
 ## Миграции базы данных
-### Применить все миграции
+### Применить все миграции (шаг 3)
 ```bash
 docker compose exec php php yii migrate
 ```
@@ -45,6 +49,12 @@ docker compose exec php php yii migrate
 ```bash
 docker compose exec php php yii migrate/down all
 ```
+
+## Endpoints
+
+Создание заявки: http://localhost/api/v1/requests (POST)
+Запуск обработки заявок с delay: http://localhost/api/v1/processor?delay=1 (GET)
+
 
 ## Автор
 
